@@ -12,7 +12,11 @@ public class GUI implements ActionListener {
     public GUI() {
 
 		// adding image for bundled resource testing
-		JLabel picture = new JLabel(new ImageIcon(getClass().getClassLoader().getResource("img/test.png")));
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("img/test.png"));
+		JLabel picture = new JLabel(icon);
+
+        System.out.println(icon.toString());
+		System.out.println(KeyEvent.VK_H);
 
         // the clickable button
         JButton button = new JButton("Click Me");
@@ -42,6 +46,7 @@ public class GUI implements ActionListener {
 
     // create one Frame
     public static void main(String[] args) {
+		System.out.println(BorderLayout.CENTER);
         new GUI();
     }
 }
